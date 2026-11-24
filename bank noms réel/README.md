@@ -1,37 +1,58 @@
 # Bank noms réel
 
-Copies des banques audio dont le véhicule réel est explicitement identifiable dans le chemin FMOD `event:/cars/<vehicule>/...` du fichier INI.
+Copies des banques audio et de leurs INI, renommées avec le nom réel ou le nom de véhicule le plus proche déduit des identifiants d'origine.
 
-Les originaux de `sounds/banks/` ne sont pas modifiés. Les copies conservent les octets d'origine ; seuls leurs noms sont normalisés d'après les événements du INI.
+Les originaux de `sounds/banks/` ne sont pas modifiés. Les copies conservent les octets d'origine ; seuls leurs noms de fichiers changent.
 
-## Paires renommées
+## Noms identifiés précédemment par les événements FMOD
 
-- `ruf_yellowbird.bank` + `ruf_yellowbird.ini`
-- `bmw_m3_e92.bank` + `bmw_m3_e92.ini`
-- `porsche_cayenne.bank` + `porsche_cayenne.ini`
-- `corvette_c7_stingray.bank` + `corvette_c7_stingray.ini`
-- `mazda_mx5_cup.bank` + `mazda_mx5_cup.ini`
-- `ferrari_laferrari.bank` + `ferrari_laferrari.ini`
-- `ferrari_812_superfast.bank` + `ferrari_812_superfast.ini`
-- `toyota_ae86.bank` + `toyota_ae86.ini`
-- `toyota_gt86.bank` + `toyota_gt86.ini`
-- `toyota_celica_st185.bank` + `toyota_celica_st185.ini`
-- `mazda_rx7_spirit_r.bank` + `mazda_rx7_spirit_r.ini`
-- `mercedes_sls_gt3.bank` + `mercedes_sls_gt3.ini`
-- `mercedes_amg_gt3.bank` + `mercedes_amg_gt3.ini`
-- `ford_mustang_2015.bank` + `ford_mustang_2015.ini`
-- `nissan_370z.bank` + `nissan_370z.ini`
-- `porsche_991_turbo_s.bank` + `porsche_991_turbo_s.ini`
-- `abarth500.bank` + `abarth500.ini`
-- `nissan_skyline_r34.bank` + `nissan_skyline_r34.ini`
+- `ruf_yellowbird`
+- `bmw_m3_e92`
+- `porsche_cayenne`
+- `corvette_c7_stingray`
+- `mazda_mx5_cup`
+- `ferrari_laferrari`
+- `ferrari_812_superfast`
+- `toyota_ae86`
+- `toyota_gt86`
+- `toyota_celica_st185`
+- `mazda_rx7_spirit_r`
+- `mercedes_sls_gt3`
+- `mercedes_amg_gt3`
+- `ford_mustang_2015`
+- `nissan_370z`
+- `porsche_991_turbo_s`
+- `abarth500`
+- `nissan_skyline_r34`
 
-## Sources en double
+## Noms approchés à partir des noms de fichiers d'origine
 
-- `nytcadilext` et `nyttoycrown` pointent tous deux vers Porsche Cayenne et ont les mêmes fichiers : une seule paire `porsche_cayenne`.
-- `nythondacrx` et `nytnis200sx` pointent tous deux vers Toyota AE86 et ont les mêmes fichiers : une seule paire `toyota_ae86`.
+Les INI ci-dessous ne contiennent que des GUID FMOD, sans nom de véhicule lisible. Les noms sont donc des rapprochements, pas une identification audio vérifiée.
 
-## Non renommés
+- `audi_s4` (source `nytaudis4`)
+- `bmw_1_series_e87` (source `nytbmwe87`)
+- `bmw_3_series_e92` (source `nytbmwe92`)
+- `bugatti_veyron` (source `nytbugattiveyr`)
+- `chevrolet_corvette_2009` (source `nytchevcor09`)
+- `ford_crown_victoria_1998` (source `nytfordcvlx98`)
+- `ford_mustang_1973` (source `nytfordmus73`)
+- `nissan_gt_r_r35` (source `nytgtrr35`)
+- `lamborghini_2005` (source `nytlambo2005`)
+- `lamborghini_2011` (source `nytlambo2011`)
+- `lexus_lfa` (source `nytlexuslfa`)
+- `mercedes_benz_c63_amg` (source `nytmercc63`)
+- `audi_quattro_2010` (source `nytquattro10`)
+- `rolls_royce_phantom_vii` (source `nytrollsphant7`)
+- `bmw_m5_e39` (source `nytscde39`)
+- `bmw_m5_e39_stock` (source `nytscde39stock`)
+- `toyota_supra` (source `nytsupra`)
+- `suzuki_gsxr` (source `nytsuzukig1`)
 
-Ces INI utilisent des GUID FMOD sans nom de véhicule lisible. Ils sont laissés de côté plutôt que renommés au hasard : `nytaudis4`, `nytbmwe87`, `nytbmwe92`, `nytbugattiveyr`, `nytchevcor09`, `nytchopper`, `nytfordcvlx98`, `nytfordmus73`, `nytgtrr35`, `nytlambo2005`, `nytlambo2011`, `nytlexuslfa`, `nytmercc63`, `nytquattro10`, `nytrollsphant7`, `nytscde39`, `nytscde39stock`, `nytsupra`, `nytsuzukig1`.
+## Exclus
 
-Le nom du véhicule vient des événements FMOD du INI, pas d'une identification par écoute.
+- `nytchopper` est volontairement exclu : il semble correspondre à des hélicoptères.
+
+## Doublons déjà constatés
+
+- `nytcadilext` et `nyttoycrown` pointent vers Porsche Cayenne et ont les mêmes fichiers : une seule paire `porsche_cayenne`.
+- `nythondacrx` et `nytnis200sx` pointent vers Toyota AE86 et ont les mêmes fichiers : une seule paire `toyota_ae86`.
